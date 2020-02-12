@@ -51,6 +51,10 @@ h6 {
 	clear: both;
 }
 
+h2 {
+	font-size: 1.8em;
+}
+
 nav {
 	font-size: 24px;
 }
@@ -66,7 +70,6 @@ General styling
 h1,
 h2,
 h3 {
-	text-align: center;
 	margin: 0;
 	padding: 1em 0;
 }
@@ -87,11 +90,21 @@ hr {
 	margin: 4em 0;
 }
 
+section h2:before {
+	content:'';
+	height:10px;
+	width:50px;
+	border-radius:5px;
+	margin-bottom:20px;
+	display:block;
+	background:#ffa804
+}
+
 
 /* Masthead section */
 
 .masthead {
-	background-image: linear-gradient(0deg, rgba(32, 58, 67, 0.3), rgba(32, 58, 67, 0.9)), url('../images/background.jpg');
+	background-image: linear-gradient(0deg, rgba(25, 29, 50, 0.3), rgba(25, 29, 50, 0.9)), url('../images/background.jpeg');
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
@@ -104,7 +117,7 @@ hr {
 /* About section */
 
 #about {
-	background: #1e464a;
+	background: #456990;
 	padding-bottom: 2em;
 	color: #FFFFFF;
 }
@@ -221,6 +234,13 @@ hr {
 	color: #FFFFFF;
 }
 
+.skill h2 {
+	font-size: 2em;
+	width: 3em;
+	margin: auto;
+	padding-bottom: 0;
+}
+
 .skill-card {
 	background-color: #FFFFFF;
 	color: #2a4660;
@@ -243,17 +263,24 @@ hr {
 }
 
 /* Experiences section */
-
-.education {
-	padding: 2em;
-	background: #2185C5;
-	color: white;
+#experiences h3 {
+	font-size: 1.3em;
+	padding: 1.5em 0 0 0;
 }
 
-.experience:last-of-type {
-	padding: 2em;
-	background: #FF7F66;
-	color: white;
+#experiences h4 {
+	font-size: 1.1em;
+	color: #ffa804;
+	margin: 0;
+}
+
+#experiences h5 {
+	font-size: 1em;
+	margin: 0.5em 0;
+}
+
+#experiences p {
+	padding-top: 0;
 }
 
 /* Footer section */
@@ -320,10 +347,14 @@ CSS Grid layout for modern browsers:
 		}
 
 		#about,
-		#portfolio,
-		#experiences {
+		#portfolio {
 			display: grid;
-			grid-template-columns: 1fr repeat(2, minmax(auto, 30em)) 1fr;
+			grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+		}
+
+		#experiences > * {
+			display: grid;
+			grid-template-columns: 1fr minmax(auto, 15em) minmax(auto, 35em) 1fr;
 		}
 
 		.skill-content {
@@ -335,11 +366,6 @@ CSS Grid layout for modern browsers:
 
 		#portfolio ul {
 			grid-column: 2/4;
-		}
-
-		.education,
-		.experience {
-			grid-column: span 2;
 		}
 
 		.nav {
@@ -363,10 +389,11 @@ CSS Grid layout for modern browsers:
 		}
 		
 		nav li a:hover {
-			color: #0088a9
+			color: #FFA804
 		}
 
-		.about-content {
+		.about-content,
+		#experiences h2 {
 			grid-column: 2 / 3;
 		}
 
@@ -376,6 +403,20 @@ CSS Grid layout for modern browsers:
 
 		#about img {
 			grid-column: 3 / 4;
+		}
+
+		/* Experiences section */
+		#experiences {
+			padding: 2em 0;
+		}
+
+		#experiences > * {
+			margin: 3em 0;
+		}
+
+		.school-list,
+		.work-list {
+			margin-left: 5em;
 		}
 	}
 }
