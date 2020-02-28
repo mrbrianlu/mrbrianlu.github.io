@@ -114,6 +114,27 @@ section h2:before {
 	display: none;
 }
 
+.banner {
+	position: absolute;
+	left: 15%;
+	top: 35%;
+}
+
+.banner > * {
+	color: #FFFFFF;
+	font-size: 2.5em;
+	padding: 0;
+}
+
+#more {
+	font-size: 3em;
+	color: #FFFFFF;
+	position: absolute;
+	left: 45%;
+	top: calc(100% - 120px);
+}
+
+
 /* About section */
 
 #about {
@@ -135,9 +156,9 @@ section h2:before {
 }
 
 #about img {
-	width: 15em;
+	width: 18em;
 	height: auto;
-	margin: 5em;
+	margin: 5em 1.5em;
 	box-shadow: 0 0.8rem 1rem rgba(0,0,0,.4);
 }
 
@@ -263,6 +284,12 @@ section h2:before {
 	padding-bottom: 0;
 }
 
+.skill-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .skill-card {
 	background-color: #FFFFFF;
 	color: #2a4660;
@@ -271,8 +298,10 @@ section h2:before {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	height: 16em;
-	padding-top: 3em;
+	height: 14em;
+	width: 15em;
+	padding: 3em 0 1em 0;
+	margin: 1.2em 0;
 }
 
 .skill-card p {
@@ -287,6 +316,7 @@ section h2:before {
 /* Experiences section */
 #experiences {
 	color: #2a4660;
+	padding: 2em 1em 1em;
 }
 
 #experiences h3 {
@@ -384,7 +414,7 @@ CSS Grid layout for modern browsers:
 		}
 
 		.skill-content {
-			margin: 3em 7em 5em 7em;
+			margin: 5em 2em;
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
 			grid-gap: 2em;
@@ -415,7 +445,7 @@ CSS Grid layout for modern browsers:
 		}
 		
 		nav li a:hover {
-			color: #FFA804
+			color: #FFA804;
 		}
 
 		.about-content,
@@ -429,12 +459,31 @@ CSS Grid layout for modern browsers:
 
 		#about img {
 			grid-column: 3 / 4;
+			margin: 5em 2em 5em 5em;
+		}
+
+		.skill-card {
+			background-color: #FFFFFF;
+			color: #2a4660;
+			border-radius: 16px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			height: 16em;
+			padding-top: 3em;
+		}
+		
+		.skill-card p {
+			text-align: center;
+			padding: 1em;
+		}
+		
+		.skill-card i {
+			font-size: 2em;
 		}
 
 		/* Experiences section */
-		#experiences {
-			padding: 2em 0;
-		}
 
 		#experiences > * {
 			margin: 3em 0;
